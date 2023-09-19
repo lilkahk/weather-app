@@ -1,4 +1,8 @@
-export default function displayData(data) {
+import { getUnitdata } from './changeTemp';
+
+// displayData(data, temp) displays the data from retrieveWeatherData while
+//   conforming to the user's desired units (temp is for celisus or farenheit)
+export default function displayData(data, temp = 'celsius') {
   // Set background colour
   const body = document.querySelector('body');
   // Remove previous classes
@@ -31,12 +35,24 @@ export default function displayData(data) {
   state.textContent = data.conditions.state;
   const location = document.querySelector('.title h2');
   location.textContent = `${data.location.name}, ${data.location.country}`;
-  const temp = document.querySelector('.temp');
-  temp.textContent = `${data.temperature.celsius} °C`;
-  const feels = document.querySelector('.feels');
-  feels.textContent = `Feels like ${data.temperature.feelslike_c} °C`;
-  const wind = document.querySelector('.wind');
-  wind.textContent = `Wind: ${data.weather.windkph} km/h`;
+  // Temp specific
+  if (temp === 'celsius') {
+    const temperature = document.querySelector('.temp');
+    temperature.textContent = `${data.temperature.celsius} °C`;
+    const feels = document.querySelector('.feels');
+    feels.textContent = `Feels like ${data.temperature.feelslike_c} °C`;
+    const wind = document.querySelector('.wind');
+    wind.textContent = `Wind: ${data.weather.windkph} km/h`;
+  } else {
+    const temperature = document.querySelector('.temp');
+    temperature.textContent = `${data.temperature.farenheit} °F`;
+    const feels = document.querySelector('.feels');
+    feels.textContent = `Feels like ${data.temperature.feelslike_f} °F`;
+    const wind = document.querySelector('.wind');
+    wind.textContent = `Wind: ${data.weather.windmph} mi/h`;
+  }
   const humidity = document.querySelector('.humidity');
   humidity.textContent = `Humidity: ${data.weather.humidity}%`;
+
+  return getUnitdata(data);
 }
