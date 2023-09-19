@@ -1,6 +1,5 @@
 import './layout.css';
 import loadPage from './loadPage';
 
-// loadPage();
-
-// const currentDisplay = document.querySelector('#current-display');
+// Loads up default page for Waterloo weather
+loadPage();
