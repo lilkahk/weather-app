@@ -11,7 +11,9 @@ const searchBar = document.querySelector('.search-box-input');
 searchBar.addEventListener('keydown', async (e) => {
   if (e.key === 'Enter') {
     const searchValue = searchBar.value;
+    searchBar.value = '';
     const data = await getCurrentWeather(searchValue);
+    if (data === false) return;
     displayData(data);
   }
 });

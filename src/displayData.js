@@ -34,7 +34,7 @@ export default function displayData(data) {
   const temp = document.querySelector('.temp');
   temp.textContent = `${data.temperature.celsius} °C`;
   const feels = document.querySelector('.feels');
-  feels.textContent = `Feels like ${data.temperature.feelslike_c}`;
+  feels.textContent = `Feels like ${data.temperature.feelslike_c} °C`;
   const wind = document.querySelector('.wind');
   wind.textContent = `Wind: ${data.weather.windkph} km/h`;
   const humidity = document.querySelector('.humidity');
