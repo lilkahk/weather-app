@@ -1,18 +1,20 @@
 import getCurrentWeather from './retrieveWeatherData';
-import './background.css';
 import displayData from './displayData';
+import './background.css';
 
 export default async function loadPage() {
   const data = await getCurrentWeather('Waterloo');
+
+  // Set background colour
   const body = document.querySelector('body');
-  // Remove classes
+  // Remove previous classes
   body.classList.remove('night');
   body.classList.remove('over-thirty');
   body.classList.remove('twenty-thirty');
   body.classList.remove('ten-twenty');
   body.classList.remove('zero-ten');
   body.classList.remove('less-zero');
-  // Set background colour
+  // Add the right class
   if (data.conditions.isDay === 0) {
     body.classList.add('night');
   } else {
@@ -29,5 +31,5 @@ export default async function loadPage() {
       body.classList.add('less-zero');
     }
   }
-  displayData();
+  displayData(data);
 }
