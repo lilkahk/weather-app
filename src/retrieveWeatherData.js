@@ -1,6 +1,6 @@
 export default async function getCurrentWeather(location) {
   try {
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=202d4f2a7784455d9f5183029231809&q=${location}&days=3&aqi=no&alerts=no`, {
+    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=202d4f2a7784455d9f5183029231809&q=${location}&days=3&aqi=no&alerts=no`, {
       mode: 'cors',
     });
     const data = await response.json();
