@@ -23,6 +23,7 @@ export default async function getCurrentWeather(location) {
       precipitationin: data.current.precip_in,
       windkph: data.current.wind_kph,
       windmph: data.current.wind_mph,
+      humidity: data.current.humidity,
     },
   };
 }
