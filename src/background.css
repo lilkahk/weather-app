@@ -1,0 +1,27 @@
+.night {
+    background-image: url(./images/starry-background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+
+.over-thirty {
+    background-image: linear-gradient(to right, #ffa600, #ff2a00);
+}
+
+.twenty-thirty {
+    background-image: linear-gradient(to right, #cef00c, #fcac00);
+}
+
+.ten-twenty {
+    background-image: linear-gradient(to right, #19e159, #defc00);
+}
+
+.zero-ten {
+    background-image: linear-gradient(to right, #00c8ff, #00ff51);
+}
+
+.less-zero {
+    background-image: linear-gradient(to right, #0011ff, #00e1ff);
+}
+
